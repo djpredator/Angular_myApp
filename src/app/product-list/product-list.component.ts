@@ -6,7 +6,7 @@ import { IProduct } from './products';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent {
+export class ProductListComponent implements OnInit{
 pageTitle: string= 'Product List';
 imageWidth:number=70;
 imageHeight:number=70;
@@ -37,5 +37,8 @@ products:IProduct[]=[
 ];
 toggleImage():void {
 this.showImage=!this.showImage;                                                        
+}
+ngOnInit():void{
+  console.log('In OnInit')
 }
 }
